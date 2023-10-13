@@ -1,0 +1,135 @@
+.days_aviable_container{
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 20% 60% 20%;
+    place-items: center;
+}
+.title_days{
+    height: 60%;
+    width: 90%;
+    font-size: 25px;    
+    display: grid;
+    place-items: center;
+}
+.time_options_container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+.start{
+    display: grid;
+    width: 45%;
+    height: 90%;
+    font-size: larger;
+    border: 4px solid  #182889;
+    position: relative;
+    background-color:  #0855A0 ;
+    place-items: center;
+}
+.start::after{
+    content: attr(msg);
+    position: absolute;
+    top: -8%;
+    left: 35%;
+    font-size: medium;
+    color: red;
+}
+.start > div{
+    height: fit-content;
+    width: 60%;
+    margin-inline: auto;
+    display: flex;
+    justify-content: space-between;
+}
+.start label{
+    font-size: larger;
+}
+.came_back{
+    width: 45%;
+    height: 90%;
+    display: grid;
+    border: 4px solid  #182889;
+    position: relative;
+    font-size: larger;
+    background-color:  #0855A0 ;
+    place-items: center;
+
+}
+.came_back::after{
+    content: attr(msg);
+    position: absolute;
+    top: -8%;
+    left: 35%;
+    font-size: medium;
+    color: red;
+}
+.came_back > div{
+    height: fit-content;
+    width: 60%;
+    margin-inline: auto;
+    display: flex;
+    justify-content: space-between;
+}
+.came_back label{
+    font-size: larger;
+}
+.btn_container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.time_check_btn{
+    width: fit-content;
+    height: fit-content;
+    font-size: xx-large;
+    border-radius:  25px /50%;
+    background-color: #f7aa5f;
+    color: #000000;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.options_selected{
+    height: 80%;
+    width: min(250px,70%);
+    margin-inline: auto;
+    display: flex;
+    position: relative;
+    justify-content: initial;
+    overflow: hidden;
+}
+.options_selected::after{
+    content: '\25BC';
+    width: 22%;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    pointer-events: none;
+   background-color:#D6DBDD;
+
+}
+.options_selected select{
+    width: 100%;
+    height: 100%;
+    appearance: none;
+   box-shadow: none;
+   border: none;
+   text-indent: 5%;
+   background-color:#D6DBDD;
+   font-size: 18px;
+}
+
+.options_selected select::-ms-expand{
+    display: none;
+}
+.options_selected select:focus{
+    outline: none;
+}

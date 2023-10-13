@@ -1,0 +1,87 @@
+.short_info_box{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/*  estilos nuevos  */
+
+.slider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+    width: 80%;
+    perspective: 1000px;
+  }
+  
+  .cards_box {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .card {
+    width: min(250px,80%);
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    position: absolute;
+    font-weight: bold;
+    font-size: large;
+    transform: rotateY(0deg);
+    border-radius: 10px;
+    padding-top: 20px;
+    box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.373);
+    cursor: pointer;
+    overflow: hidden;
+  }
+  .card::after{
+    position: absolute;
+    content: attr(data-title);
+    width: 90%;
+    height: 30px;
+    top: 5%;
+    left: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .card:nth-child(1) { transform: rotateY(0deg) translateZ(170px);
+                       /* background-image: url('../svgLogos/paradores.jpg');*/
+                    
+                }
+.card:nth-child(2) { transform: rotateY(90deg) translateZ(170px);
+                   
+                }
+.card:nth-child(3) { transform: rotateY(180deg) translateZ(170px);
+                       
+
+                    }
+.card:nth-child(4) { transform: rotateY(270deg) translateZ(170px); 
+                   
+
+}
+  
+  .move_card {
+    width: fit-content;
+    height: fit-content;
+    font-size: 52px;
+    z-index: 1;
+    font-weight: bold;
+    color: rebeccapurple;
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+  .bg_image_menu{
+    
+  }

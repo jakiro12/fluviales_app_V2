@@ -1,0 +1,44 @@
+.hours_box{
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 10% 40% 50%;
+}
+.hours_box li{
+    list-style: none;
+}
+.days_open{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows:  repeat(8,1fr);
+    padding: 3%;
+    height: 100%;
+    width: auto;
+}
+.days_open > h2 {
+    margin-inline: auto;
+}
+.days_open > div{
+    width: max(30%,300px);
+    height: 100%;
+    margin-inline: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.hours_day > p{
+    width: fit-content;
+    height: fit-content;
+}
+.get_in{
+    width: min(260px,85%);
+    margin: auto;
+    height: 90%;
+    font-size:  x-large;
+    text-transform: uppercase;
+    background-color: #f7aa5f;
+    border-radius:  20px/ 50%;
+    border: none;
+    cursor: pointer;
+}
