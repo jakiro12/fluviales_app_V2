@@ -1,6 +1,7 @@
 'use client'
 import styles from './styles.module.css';
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 
 export default function GardenShip(){
     //seria lo recomendable tener una img de fondo y cambiar su url con useState
@@ -19,8 +20,14 @@ export default function GardenShip(){
                         <option>tre</option>
                     </select>
                 </div>
-                <div className={styles.image_card} onClick={setDestiny}>
-                    imagen del lugar
+                <div className={styles.image_card} onClick={setDestiny}
+                style={{ position: 'relative', overflow: 'hidden' }}>
+                        <Image
+                          src="/parador1.jpg"
+                          fill={true}
+                          alt="Boat to"
+                          style={{objectFit:'cover'}}
+                        />
                 </div>
             </main>
         </article>
