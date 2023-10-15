@@ -13,6 +13,7 @@
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 10% 10% 80%;
+    background: #0855A0;
 }
 .spot_card > h3 {
     width: fit-content;
@@ -22,9 +23,10 @@
 .image_card{
     width: 90%;
     height: 95%;
-    outline: 2px solid red;
+    outline: 2px solid #abababc0;
     margin: auto;
     cursor: pointer;
+    border-radius: 10px;
 }
 .options_selected{
     height: 60%;
