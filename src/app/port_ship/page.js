@@ -12,13 +12,15 @@ export default function ChooseYourShip(){
             <h2>Embarcaciones</h2>
             <div className={styles.float_aviable}>
                 <article>
-                <Image
+                    <div className={styles.img_boat_box}
+                    style={{ position: 'relative', overflow: 'hidden' }}>
+                    <Image
                           src="/boat_gomon.jpg"
-                          width={100}
-                          height={100}
-                          alt="Picture menu card"
-                          className={styles.miss}
+                          fill={true}
+                          alt="Boat to"
+                          style={{objectFit:'cover'}}
                         />
+                    </div>
                     <main className={styles.info_boat_island}>
                         <h3>Banquito san Andres </h3>
                         <p>Viaja a las paradores</p>
@@ -31,7 +33,15 @@ export default function ChooseYourShip(){
                     </main>
                 </article>
                 <article>
-                <img  alt="foto barco" className={styles.miss}/>
+                <div className={styles.img_boat_box}
+                    style={{ position: 'relative', overflow: 'hidden' }}>
+                    <Image
+                          src="/boat_gomon.jpg"
+                          fill={true}
+                          alt="Boat to"
+                          style={{objectFit:'cover'}}
+                        />
+                    </div>
                     <main className={styles.info_boat_island}>
                         <h3>Tracker Garden I</h3>
                         <p>Excursion</p>
@@ -44,7 +54,15 @@ export default function ChooseYourShip(){
                     </main>
                 </article>
                 <article>
-                <img  alt="foto barco" className={styles.miss}/>
+                <div className={styles.img_boat_box}
+                    style={{ position: 'relative', overflow: 'hidden' }}>
+                    <Image
+                          src="/boat_gomon.jpg"
+                          fill={true}
+                          alt="Boat to"
+                          style={{objectFit:'cover'}}
+                        />
+                    </div>
                     <main className={styles.info_boat_island}>
                         <h3>Gomon Max II</h3>
                         <p>Excursion</p>

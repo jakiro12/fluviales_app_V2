@@ -25,7 +25,7 @@
     grid-template-rows: repeat(3,1fr);
 }
 .float_aviable > article {
-    width: 90%;
+    width: 97%;
     height: 90%;
     margin-inline: auto;
     display:grid;
@@ -34,16 +34,18 @@
     background: #0855A0;
     box-shadow: 2px 2px 2px 1px black;
 }
-.miss{
-    height: 93%;
-    width: 93%;
+.img_boat_box{
+    width: 90%;
+    height: 90%;
     margin: auto;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
 }
 .info_boat_island{
     display: grid;
     place-items: center;
     grid-template-columns: 98%;
-    grid-template-rows: 20% 10% 40% 30%;
+    grid-template-rows: 20% 15% 40% 25%;
     font-size: 14px;
 }
 .select_time{

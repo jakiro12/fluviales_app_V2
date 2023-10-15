@@ -24,13 +24,13 @@ export default function SignInFormTravel(){
                 onSubmit={checkValuesUser}
             >
                 <div>
-                    <label className={styles.input_nick}>usuario</label>
+                    <label className={styles.input_nick}>Correo electronico</label>
                     <input type="text" className={styles.get_data_input}
                      value={signinUserParams.nameUser}
                      name='nameUser'
                      onChange={handleInputChange}/>
                 </div>
-                <div>  <label  className={styles.input_nick}>contraseña</label>
+                <div>  <label  className={styles.input_nick}>Contraseña</label>
                     <input type="password"  className={styles.get_data_input}
                     value={signinUserParams.passUser}
                     name='passUser'
