@@ -25,7 +25,7 @@
     grid-template-rows: repeat(3,1fr);
 }
 .float_aviable > article {
-    width: 97%;
+    width: 93%;
     height: 90%;
     margin-inline: auto;
     display:grid;
