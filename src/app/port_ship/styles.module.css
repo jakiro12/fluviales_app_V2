@@ -4,6 +4,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    background: #0855A0;
 }
 .navy_container{
     width: min(550px,100%);
@@ -31,8 +32,8 @@
     display:grid;
     border-radius: 10px;
     grid-template-columns: repeat(2,1fr);
-    background: #0855A0;
-    box-shadow: 2px 2px 2px 1px black;
+    box-shadow: 0px 6px 5px #00000055;
+    background-color:  #D6DBDD ;
 }
 .img_boat_box{
     width: 90%;
@@ -52,7 +53,6 @@
     padding: 2%;
     cursor: pointer;
     font-weight: 600;
-    color: white;
     font-size: 14px;
     border-radius:  10px;
     background: transparent;
