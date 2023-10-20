@@ -5,9 +5,8 @@
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    background: #0855A0;
 }
-
-/*  estilos nuevos  */
 
 .slider {
     display: flex;
@@ -43,6 +42,7 @@
     box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.373);
     cursor: pointer;
     overflow: hidden;
+    outline: 1px solid #abababc0;
   }
   .card::after{
     position: absolute;
@@ -55,33 +55,19 @@
     justify-content: center;
     align-items: center;
   }
-  .card:nth-child(1) { transform: rotateY(0deg) translateZ(170px);
-                       /* background-image: url('../svgLogos/paradores.jpg');*/
-                    
-                }
-.card:nth-child(2) { transform: rotateY(90deg) translateZ(170px);
-                   
-                }
-.card:nth-child(3) { transform: rotateY(180deg) translateZ(170px);
-                       
-
-                    }
-.card:nth-child(4) { transform: rotateY(270deg) translateZ(170px); 
-                   
-
-}
+  .card:nth-child(1) { transform: rotateY(0deg) translateZ(170px);}
+  .card:nth-child(2) { transform: rotateY(90deg) translateZ(170px);}
+  .card:nth-child(3) { transform: rotateY(180deg) translateZ(170px);}
+  .card:nth-child(4) { transform: rotateY(270deg) translateZ(170px);}
   
   .move_card {
     width: fit-content;
     height: fit-content;
-    font-size: 52px;
+    font-size: 65px;
     z-index: 1;
     font-weight: bold;
-    color: rebeccapurple;
+    color: #f7aa5f;
     border: none;
     background: none;
     cursor: pointer;
-  }
-  .bg_image_menu{
-    
   }

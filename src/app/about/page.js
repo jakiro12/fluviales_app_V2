@@ -1,9 +1,11 @@
 'use client'
 import NavBarInfoHome from '../LayoutComponents/NavbarHome'
+import LoginBtnMenu from '../LayoutComponents/btnGoToLogin'
 import styles from './styles.module.css'
 export default function AboutOurCompany(){
     return (
         <article className={styles.about_info_box}>
+            <LoginBtnMenu/>
             <NavBarInfoHome/>
             <div className={styles.content_img}> <img className={styles.muestra}  alt='foto de la terminal fluvial'/>
            </div>

@@ -38,7 +38,8 @@
     font-size:  x-large;
     text-transform: uppercase;
     background-color: #f7aa5f;
-    border-radius:  20px/ 50%;
+    border-radius:  10px;
     border: none;
     cursor: pointer;
+    margin-top: 10px;
 }

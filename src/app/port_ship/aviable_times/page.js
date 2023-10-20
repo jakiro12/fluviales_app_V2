@@ -13,10 +13,14 @@ export default function CheckHoursAndDays(){
         timeStyle:'short'
     })
     const actualDay=formatDay.format(today)
-    const timeTodayinHours=formatTimeNow.format(today)
-
+  //  const timeTodayinHours=formatTimeNow.format(today)
+    const daysOfWeek = ['lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo'];
+    const actualDayIndex = today.getDay(); // 0 para domingo, 1 para lunes, 2 para martes, etc.
+  
     const handleDayChange = (e) => {
         setSelectedDay(e.target.value);
+        setSelectedIda(null);
+        setSelectedRegreso(null);
       };
     
       const handleIdaChange = (hora) => {
@@ -29,21 +33,22 @@ export default function CheckHoursAndDays(){
     
       
       const sendDataDay=()=>{
-        console.log(actualDay)
+        console.log(actualDay,selectedIda,selectedRegreso )
    
       }
     return(
         <article className={styles.days_aviable_container}>
         <header className={styles.title_days}>Seleccionar dia y horario
         <div className={styles.options_selected}>           
-        <select  onChange={handleDayChange} value={selectedDay}>
-            <option value="martes" >Martes</option>
-            <option value="miércoles">Míercoles</option>
-            <option value="jueves">Jueves</option>
-            <option value="viernes">Viernes</option>
-            <option value="sábado">Sabado</option>
-            <option value="domingo">Domingo</option>
-        </select>
+        <select onChange={handleDayChange} value={selectedDay}>
+            {daysOfWeek.map((day, index) => (
+              index >= (actualDayIndex - 1) && (
+                <option key={day} value={day}>
+                  {day.charAt(0).toUpperCase() + day.slice(1)}
+                </option>
+              )
+            ))}
+          </select>
         </div>
         </header>
         <main className={styles.time_options_container}>
@@ -51,30 +56,30 @@ export default function CheckHoursAndDays(){
                 <div><label htmlFor="12:45" name="banquitotimego">12:45</label>
                     <input
                      type="checkbox" name="banquitogo"
+                     className={styles.check_box_s}
                      checked={selectedIda === '12:45'}
                      onChange={() => handleIdaChange('12:45')}
-                     disabled={!(selectedDay === actualDay)}
                      />
                 </div>
                 <div><label htmlFor="13:45" name="banquitotimego">13:45</label>
                     <input type="checkbox" name="banquitogo" 
                     checked={selectedIda === '13:45'}
+                    className={styles.check_box_s}
                     onChange={() => handleIdaChange('13:45')}
-                    disabled={!(selectedDay === actualDay)}
                      />
                 </div>
                 <div><label htmlFor="14:45" name="banquitotimego">14:45</label>
                     <input type="checkbox" name="banquitogo" 
                      checked={selectedIda === '14:45'}
+                     className={styles.check_box_s}
                      onChange={() => handleIdaChange('14:45')}
-                     disabled={!(selectedDay === actualDay)}
                      />
                 </div>
                 <div><label htmlFor="15:45" name="banquitotimego">15:45</label>
                     <input type="checkbox" name="banquitogo"
                      checked={selectedIda === '15:45'}
+                     className={styles.check_box_s}
                      onChange={() => handleIdaChange('15:45')}
-                     disabled={!(selectedDay === actualDay)}
                       />
                 </div>
             </div>
@@ -82,29 +87,29 @@ export default function CheckHoursAndDays(){
             <div><label htmlFor="17:45" name="banquitotimeback">17:45</label>
                     <input type="checkbox" name="banquitoback"
                      checked={selectedRegreso === '17:45'}
+                     className={styles.check_box_s}
                      onChange={() => handleRegresoChange('17:45')}
-                     disabled={!(selectedDay === actualDay)}
                       />
                 </div>
                 <div><label htmlFor="18:45" name="banquitotimeback">18:45</label>
                     <input type="checkbox" name="banquitoback"
                      checked={selectedRegreso === '18:45'}
+                     className={styles.check_box_s}
                      onChange={() => handleRegresoChange('18:45')}
-                     disabled={!(selectedDay === actualDay)}
                       />
                 </div>
                 <div><label htmlFor="19:45" name="banquitotimeback">19:45</label>
                     <input type="checkbox" name="banquitoback" 
                      checked={selectedRegreso === '19:45'}
+                     className={styles.check_box_s}
                      onChange={() => handleRegresoChange('19:45')}
-                     disabled={!(selectedDay === actualDay)}
                      />
                 </div>
                 <div><label htmlFor="20:45" name="banquitotimeback">20:45</label>
                     <input type="checkbox" name="banquitoback" 
                      checked={selectedRegreso === '20:45'}
+                     className={styles.check_box_s}
                      onChange={() => handleRegresoChange('20:45')}
-                     disabled={!(selectedDay === actualDay)}
                      />
                 </div>
             </div>

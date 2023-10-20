@@ -116,17 +116,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background: #0855A0;
 }
 .container{
   height: 80%;
   padding-top: 10px;
   width: min(450px,90%);
   display: grid;
-  color: white;
-  background:  #0855A0 ;
+  background-color:  #D6DBDD ;
   grid-template-rows: repeat(7,1fr);
   grid-template-columns: 1fr;
   border-radius: 10px;
+  font-size: 17px;
   }
 
 .input_content{

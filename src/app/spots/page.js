@@ -1,9 +1,11 @@
 'use client'
 import NavBarInfoHome from '../LayoutComponents/NavbarHome'
+import LoginBtnMenu from '../LayoutComponents/btnGoToLogin'
 import styles from './styles.module.css'
 export default function SpotsAviables (){
     return(
         <article className={styles.spots_info_box}>
+            <LoginBtnMenu/>
             <NavBarInfoHome/>
             <div className={styles.image_content_spot}>
                 <img alt="foto de la playa"  />

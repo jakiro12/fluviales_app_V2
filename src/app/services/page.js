@@ -1,9 +1,11 @@
 'use client'
 import NavBarInfoHome from '../LayoutComponents/NavbarHome'
+import LoginBtnMenu from '../LayoutComponents/btnGoToLogin'
 import styles from './styles.module.css'
 export default function PromotedServices(){
     return(
         <article className={styles.activities_box}>
+            <LoginBtnMenu/>
             <NavBarInfoHome/>
             <div className={styles.img_act_content}>
                 <img  alt="gente zarpando"/>
