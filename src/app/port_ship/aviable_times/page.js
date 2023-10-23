@@ -13,9 +13,9 @@ export default function CheckHoursAndDays(){
         timeStyle:'short'
     })
     const actualDay=formatDay.format(today)
-  //  const timeTodayinHours=formatTimeNow.format(today)
-    const daysOfWeek = ['lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo'];
-    const actualDayIndex = today.getDay(); // 0 para domingo, 1 para lunes, 2 para martes, etc.
+    const timeTodayinHours=formatTimeNow.format(today)
+    const daysOfWeek = ['lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado',];
+    const actualDayIndex = today.getDay(); // 0 para el dia actual, 1, 2, etc para los dias restantes
   
     const handleDayChange = (e) => {
         setSelectedDay(e.target.value);
@@ -59,6 +59,7 @@ export default function CheckHoursAndDays(){
                      className={styles.check_box_s}
                      checked={selectedIda === '12:45'}
                      onChange={() => handleIdaChange('12:45')}
+                     disabled={timeTodayinHours > '12:45'}
                      />
                 </div>
                 <div><label htmlFor="13:45" name="banquitotimego">13:45</label>
@@ -66,6 +67,7 @@ export default function CheckHoursAndDays(){
                     checked={selectedIda === '13:45'}
                     className={styles.check_box_s}
                     onChange={() => handleIdaChange('13:45')}
+                    disabled={timeTodayinHours > '13:45'}
                      />
                 </div>
                 <div><label htmlFor="14:45" name="banquitotimego">14:45</label>
@@ -73,6 +75,7 @@ export default function CheckHoursAndDays(){
                      checked={selectedIda === '14:45'}
                      className={styles.check_box_s}
                      onChange={() => handleIdaChange('14:45')}
+                     disabled={timeTodayinHours > '14:45'}
                      />
                 </div>
                 <div><label htmlFor="15:45" name="banquitotimego">15:45</label>
@@ -80,6 +83,7 @@ export default function CheckHoursAndDays(){
                      checked={selectedIda === '15:45'}
                      className={styles.check_box_s}
                      onChange={() => handleIdaChange('15:45')}
+                     disabled={timeTodayinHours > '15:45'}
                       />
                 </div>
             </div>

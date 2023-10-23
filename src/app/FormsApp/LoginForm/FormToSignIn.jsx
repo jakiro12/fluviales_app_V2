@@ -19,7 +19,7 @@ export default function SignInFormTravel(){
     }
     return(
         <article className={styles.login_form_box}>
-             <h4 className={styles.title_app}>Bienvenido a SoS Rio</h4>
+             <h4 className={styles.title_app}>Navega con SoS Rio</h4>
             <form   className={styles.form_to_get_in} 
                 onSubmit={checkValuesUser}
             >
