@@ -90,7 +90,7 @@
     height: fit-content;
     font-size: xx-large;
     border-radius:  10px;
-    background-color: #f7aa5f;
+    background: linear-gradient(180deg,#fb932c,#f7aa5f);
     color: #000000;
     padding: 5px;
     cursor: pointer;

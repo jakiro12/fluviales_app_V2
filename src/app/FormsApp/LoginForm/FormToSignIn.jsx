@@ -14,7 +14,8 @@ export default function SignInFormTravel(){
         setSigninUserParams({ ...signinUserParams, [name]: value });
       };
     const checkValuesUser=(e)=>{
-        e.preventDefault()       
+        e.preventDefault()   
+        console.log(signinUserParams)    
         router.push('/menu_user')
     }
     return(

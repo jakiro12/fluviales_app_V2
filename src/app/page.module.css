@@ -6,16 +6,15 @@
   overflow: hidden;
 }
 .login_form_box{
-  height: 90%;
-    margin-bottom: auto;
+    height: 90%;
     width: min(500px,90%);
     display:  grid;
     border-radius: 25px;
+    border: 4px solid #0854a0be;
     overflow:hidden;
     grid-template-columns: 1fr;
     grid-template-rows: 10% 75% 15%;
-    box-shadow: 3px 3px rgba(194, 194, 194, 0.692);
-    background-color: #D6DBDD;
+    background: linear-gradient(180deg,#0855A0,#197bde);
     box-shadow: 0px 6px 5px #00000055;
     margin: auto;
 }
@@ -78,6 +77,7 @@
 }
 .get_data_input:focus{
   outline: none;
+  background: transparent;
 }
 .btn_check_user{
   width: fit-content;
@@ -85,7 +85,7 @@
   padding: 3px 5px;
   border: none;
   font-size: x-large;
-  background-color: #f7aa5f;
+  background: linear-gradient(180deg,#fb932c,#f7aa5f);
   border-radius: 5px;
   cursor: pointer;
   color: black;

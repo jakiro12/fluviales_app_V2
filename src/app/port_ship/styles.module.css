@@ -55,6 +55,6 @@
     font-weight: 600;
     font-size: 14px;
     border-radius:  10px;
-    background: transparent;
-    border: 2px solid  #182889;
+    border: none;
+    background: linear-gradient(180deg,#fb932c,#f7aa5f);
 }
