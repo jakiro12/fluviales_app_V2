@@ -1,7 +1,9 @@
 'use client'
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import styles from './styles.module.css';
 export default function CheckHoursAndDays(){
+    const router = useRouter()
     const today= new Date()//trae el dia actual
     const [selectedDay, setSelectedDay] = useState('martes');
     const [selectedIda, setSelectedIda] = useState(null);
@@ -34,7 +36,7 @@ export default function CheckHoursAndDays(){
       
       const sendDataDay=()=>{
         console.log(actualDay,selectedIda,selectedRegreso )
-   
+        router.push('/ticket')
       }
     return(
         <article className={styles.days_aviable_container}>

@@ -1,0 +1,212 @@
+.section_container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ticket_cotainer{
+    height: 90%;
+    width: min(500px,90%);
+    display: grid;
+    background: transparent;
+    grid-template-rows: 10% 80% 10%;
+}
+.top_decoration{
+    background-color:#182889;
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    --mask: 
+    radial-gradient(4px at 25% 0,#0000 98%,#000) 50% 5px/16px 100% repeat-x,
+    radial-gradient(4px at 75% 50%,#000 99%,#0000 101%) top/16px 8px repeat-x;
+  -webkit-mask: var(--mask);
+          mask: var(--mask);
+}
+.top_decoration > div{
+    width: 17.8%;
+    height: auto;
+    border-radius: 0 0 10px 10px;
+    background-color: black;
+}
+.bottom_decoration{
+    background-color:  #182889;
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    --mask: 
+    radial-gradient(4px at 75% 100%,#0000 98%,#000) 50% calc(100% - 4px)/16px 100% repeat-x,
+    radial-gradient(4px at 25% 50%,#000 99%,#0000 101%) bottom/16px 8px repeat-x;
+  -webkit-mask: var(--mask);
+          mask: var(--mask);
+}
+.bottom_decoration > div{
+    width: 17.8%;
+    height: auto;
+    background-color: black;
+    border-radius: 10px 10px 0 0 ;
+}
+.ticket_info{
+    background: linear-gradient(180deg,#0855A0,#197bde);
+    display: grid;
+    grid-template-rows: 10% 60% 30% ;
+}
+.info_display{
+    width: 80%;
+    height: 90%;
+    border: 4px solid  #182889;
+    margin: auto;
+    display: grid;
+    grid-template-rows: 1.4fr 0.8fr 0.8fr;
+    grid-template-columns: 1fr;
+}
+.terminal{
+    margin: auto;
+    font-size: 3rem;
+    font-family: monospace;
+    color: orangered;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    transform: skewX(-10deg);
+}
+.price_station{
+    border-top: dotted 5px white;
+    display: grid;
+    place-items: center;
+    grid-template-columns: 1fr;
+}
+.price_station > div{
+    width: 80%;
+    height: 90%;
+    border: 4px solid  #182889;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 20% 40% 40%;
+}
+.head_info{
+    display: grid;
+    height: 100%;
+    width: 100%;
+    align-content: space-between;
+    grid-template-columns: 1fr;
+}
+.head_info > h2{
+    display: grid;
+    width: 60%;
+    color: white;
+    height: fit-content;
+    font-size: xx-large;
+    text-align: center;
+    margin-inline:auto ;
+    letter-spacing: 2px;
+}
+.head_info > h2 p{
+    letter-spacing: normal;
+    font-size: x-large;
+}
+.head_info > p{
+    margin-inline: auto;
+    font-size: 20px;
+    width: fit-content;
+    height: fit-content;
+}
+.day_info{
+    display: flex;
+    width: 100%;
+    height: 50%;
+    justify-content: center;
+    align-items: center;
+    border-top: 4px solid #182889;
+    border-bottom: 4px solid #182889;
+}
+.day_info > p{
+    width: fit-content;
+    height: fit-content;
+    color: tomato;
+    font-size: 18px;
+}
+.movebtn{
+    transform: translateX(30px);
+    transition: all 1s;
+}
+.displaybtn{
+    position: relative;
+    width: 50px;
+    height:20px;
+    border: none;
+    border-radius: 25% 25% 25% 25% / 50% 50% 50% 50%;
+    background-color: green;
+
+}
+.timebtn{
+    width:15px;
+    border-radius:50%;
+    height:15px;
+    cursor:pointer;
+    position: absolute;
+    left: 4%;
+    transition: all 1s;
+}
+.port_info{
+    display: grid;
+    height: 100%;
+    width: 100%;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(2,1fr);
+}
+.port_info > p{
+    font-size: 18px;
+    margin: auto;
+    width: fit-content;
+    height: fit-content;
+}
+.open_time{
+    width: 100%;
+    text-align: center;
+}
+.quantity_tickets{
+    width: 95%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+}
+.quantity_tickets > div{
+    width: 40%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.quantity_tickets button{
+    background: none;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    margin-inline: 8%;
+    font-size: 20px;
+    border-radius: 50%;
+    color: white;
+    font-weight: 600;
+    border: 2px solid #182889;
+}
+.set_ticket{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.btn_buy_ticket{
+    width: fit-content;
+    height: fit-content;
+    border: none;
+    padding: 4px 8px;
+    font-size: 18px;
+    color: white;
+    background:linear-gradient(#0855A0,#182889) ;
+    cursor: pointer;
+}
