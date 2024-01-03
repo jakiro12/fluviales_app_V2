@@ -7,9 +7,10 @@ export default function NavBarInfoHome(){
         <nav className={styles.nav_bar_box}>  
             <ul>
                 <li>
-                    <Link href='/hours'>Horarios</Link> </li>
+                    <Link href='/'>Inicio</Link>
+                </li>
                 <li>
-                    <Link href='/spots'>Paradores</Link> 
+                    <Link href='/hours'>Horarios</Link>
                 </li>
                 <li>
                     <Link href='/services'>Servicios</Link> 
