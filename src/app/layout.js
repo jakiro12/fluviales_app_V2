@@ -1,3 +1,4 @@
+import Providers from './ContexDataApp/provider'
 import './globals.css'
 import { Inter } from 'next/font/google'
 
@@ -11,7 +12,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="es-AR">
+      <Providers>
       <body className={inter.className}>{children}</body>
+      </Providers>
     </html>
   )
 }

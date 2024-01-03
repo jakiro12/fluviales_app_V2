@@ -4,6 +4,7 @@ import styles from '../../page.module.css';
 import { useRouter } from 'next/navigation';
 
 export default function SignInFormTravel(){
+   
     const router = useRouter()
     const[signinUserParams,setSigninUserParams]=useState({
         nameUser:'',
@@ -20,7 +21,7 @@ export default function SignInFormTravel(){
     }
     return(
         <article className={styles.login_form_box}>
-             <h4 className={styles.title_app}>Navega con SoS Rio</h4>
+             <h4 className={styles.title_app}>Fluviales del Parana</h4>
             <form   className={styles.form_to_get_in} 
                 onSubmit={checkValuesUser}
             >

@@ -1,7 +1,10 @@
 'use client'
-import styles from './styles.module.css'
-
+import { useSelector } from 'react-redux';
+import styles from './styles.module.css';
+import { useState } from 'react';
 export default function TicketDay(){
+    const currentBoatSelected=useSelector(state=> state.valores.boat_name)
+    const [ticketsPerUser,setTicketsPerUser]=useState(0)
     return(
         <section className={styles.section_container}>
         <article className={styles.ticket_cotainer}>
@@ -22,7 +25,7 @@ export default function TicketDay(){
                     
                     </div>
                     <div className={styles.port_info}>
-                    <p>embarcacion nombre</p>
+                    <p>{currentBoatSelected}</p>
                     <p>Valido:fecha</p>
                     </div>
                 </div>
@@ -34,9 +37,13 @@ export default function TicketDay(){
                         <div className={styles.quantity_tickets}>
                            cantidad de tickets:
                             <div>
-                                <button > - </button>
-                                <p>2</p>
-                                <button > + </button>
+                                <button 
+                                onClick={()=>setTicketsPerUser(ticketsPerUser - 1)}
+                                > - </button>
+                                <p>{ticketsPerUser}</p>
+                                <button 
+                                onClick={()=>setTicketsPerUser(ticketsPerUser + 1)}
+                                > + </button>
                            </div>
                         </div>
                        <div className={styles.set_ticket}>

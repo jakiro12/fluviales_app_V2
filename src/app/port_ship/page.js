@@ -2,10 +2,25 @@
 import styles from './styles.module.css';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectFloatTo } from '../ContexDataApp/slice';
 
 export default function ChooseYourShip(){
     const router = useRouter()
- 
+    const floatSelected=useSelector(state=> state.valores.boat_name)
+    const dispatch=useDispatch()
+    const select_banquito_san_andres=()=>{
+        dispatch(selectFloatTo("San Andres")) //debo hacer que persista enla memoria
+        router.push('/port_ship/san_andres') 
+    }
+    const select_garden=()=>{
+        dispatch(selectFloatTo("Tracker Garden")) //debo hacer que persista enla memoria
+        router.push('/port_ship/garden') 
+    }
+    const select_gomon=()=>{
+        dispatch(selectFloatTo("Gomon Max")) //debo hacer que persista enla memoria
+        router.push('/port_ship/gomon') 
+    }
     return(
         <article className={styles.menu_boats_box}>
             <div className={styles.navy_container}>
@@ -28,7 +43,7 @@ export default function ChooseYourShip(){
                             $ 800 Menores de 3 a 10 años
                             (Menores de 3 sin cargo)</p>
                             <button className={styles.select_time}
-                            onClick={() => router.push('/port_ship/san_andres')}
+                            onClick={select_banquito_san_andres}
                             >Elegir destino</button>
                     </main>
                 </article>
@@ -49,7 +64,7 @@ export default function ChooseYourShip(){
                              en tracker.
                               Se llega hasta Balneario La Florida.</p>
                             <button className={styles.select_time}
-                            onClick={() => router.push('/port_ship/garden')}
+                            onClick={select_garden}
                             >Elegir destino</button>
                     </main>
                 </article>
@@ -69,7 +84,7 @@ export default function ChooseYourShip(){
                         <p>Paseo de 1 hora 45 minutos por el canal principal, en gomón hasta 
                             islote después del Puente Rosario-Victoria.</p>
                             <button className={styles.select_time}
-                            onClick={() => router.push('/port_ship/gomon')}
+                            onClick={select_gomon}
                             >Elegir destino</button>
                     </main>
                 </article>
