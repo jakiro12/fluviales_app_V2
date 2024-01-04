@@ -4,7 +4,19 @@ import styles from './styles.module.css';
 import { useState } from 'react';
 export default function TicketDay(){
     const currentBoatSelected=useSelector(state=> state.valores.boat_name)
-    const [ticketsPerUser,setTicketsPerUser]=useState(0)
+    const [ticketsPerUser,setTicketsPerUser]=useState(1)
+    const decreaseTickets = () => {
+        if (ticketsPerUser > 1) {
+          setTicketsPerUser(ticketsPerUser - 1);
+        }
+      };
+    
+      const increaseTickets = () => {
+        if (ticketsPerUser < 10) {
+          setTicketsPerUser(ticketsPerUser + 1);
+        }
+      };
+    
     return(
         <section className={styles.section_container}>
         <article className={styles.ticket_cotainer}>
@@ -38,16 +50,16 @@ export default function TicketDay(){
                            cantidad de tickets:
                             <div>
                                 <button 
-                                onClick={()=>setTicketsPerUser(ticketsPerUser - 1)}
+                                onClick={decreaseTickets}
                                 > - </button>
                                 <p>{ticketsPerUser}</p>
                                 <button 
-                                onClick={()=>setTicketsPerUser(ticketsPerUser + 1)}
+                                onClick={increaseTickets}
                                 > + </button>
                            </div>
                         </div>
                        <div className={styles.set_ticket}>
-                       <p>Precio:12$</p>
+                       <p>Precio:{1200 * ticketsPerUser}$</p>
                        <button className={styles.btn_buy_ticket}>Comprar</button>
                         </div> 
                     </div>
