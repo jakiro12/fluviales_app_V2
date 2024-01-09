@@ -6,10 +6,10 @@ export default function CheckHoursAndDays(){
     const router = useRouter()
     const today= new Date()//trae el dia actual
     const [selectedDay, setSelectedDay] = useState('martes');
-    const [selectedIda, setSelectedIda] = useState(null);
-    const [selectedRegreso, setSelectedRegreso] = useState(null);
+    const [selectDeparture, setSelectDeparture] = useState(null);
+    const [selectedReturn, setSelectedReturn] = useState(null);
     const formatDay= new Intl.DateTimeFormat("es-ar",{
-       weekday:'long'
+       weekday:'short'
     })
     const formatTimeNow=new Intl.DateTimeFormat("es-ar",{
         timeStyle:'short'
@@ -21,21 +21,21 @@ export default function CheckHoursAndDays(){
   
     const handleDayChange = (e) => {
         setSelectedDay(e.target.value);
-        setSelectedIda(null);
-        setSelectedRegreso(null);
+        setSelectDeparture(null);
+        setSelectedReturn(null);
       };
     
       const handleIdaChange = (hora) => {
-        setSelectedIda(hora);
+        setSelectDeparture(hora);
       };
     
       const handleRegresoChange = (hora) => {
-        setSelectedRegreso(hora);
+        setSelectedReturn(hora);
       };
     
       
       const sendDataDay=()=>{
-        console.log(actualDay,selectedIda,selectedRegreso )
+        console.log(actualDay,selectDeparture,selectedReturn )
         router.push('/ticket')
       }
     return(
@@ -59,14 +59,14 @@ export default function CheckHoursAndDays(){
                     <input
                      type="checkbox" name="banquitogo"
                      className={styles.check_box_s}
-                     checked={selectedIda === '12:45'}
+                     checked={selectDeparture === '12:45'}
                      onChange={() => handleIdaChange('12:45')}
                      disabled={timeTodayinHours > '12:45'}
                      />
                 </div>
                 <div><label htmlFor="13:45" name="banquitotimego">13:45</label>
                     <input type="checkbox" name="banquitogo" 
-                    checked={selectedIda === '13:45'}
+                    checked={selectDeparture === '13:45'}
                     className={styles.check_box_s}
                     onChange={() => handleIdaChange('13:45')}
                     disabled={timeTodayinHours > '13:45'}
@@ -74,7 +74,7 @@ export default function CheckHoursAndDays(){
                 </div>
                 <div><label htmlFor="14:45" name="banquitotimego">14:45</label>
                     <input type="checkbox" name="banquitogo" 
-                     checked={selectedIda === '14:45'}
+                     checked={selectDeparture === '14:45'}
                      className={styles.check_box_s}
                      onChange={() => handleIdaChange('14:45')}
                      disabled={timeTodayinHours > '14:45'}
@@ -82,7 +82,7 @@ export default function CheckHoursAndDays(){
                 </div>
                 <div><label htmlFor="15:45" name="banquitotimego">15:45</label>
                     <input type="checkbox" name="banquitogo"
-                     checked={selectedIda === '15:45'}
+                     checked={selectDeparture === '15:45'}
                      className={styles.check_box_s}
                      onChange={() => handleIdaChange('15:45')}
                      disabled={timeTodayinHours > '15:45'}
@@ -92,28 +92,28 @@ export default function CheckHoursAndDays(){
             <div className={styles.came_back}>Horarios de regreso
             <div><label htmlFor="17:45" name="banquitotimeback">17:45</label>
                     <input type="checkbox" name="banquitoback"
-                     checked={selectedRegreso === '17:45'}
+                     checked={selectedReturn === '17:45'}
                      className={styles.check_box_s}
                      onChange={() => handleRegresoChange('17:45')}
                       />
                 </div>
                 <div><label htmlFor="18:45" name="banquitotimeback">18:45</label>
                     <input type="checkbox" name="banquitoback"
-                     checked={selectedRegreso === '18:45'}
+                     checked={selectedReturn === '18:45'}
                      className={styles.check_box_s}
                      onChange={() => handleRegresoChange('18:45')}
                       />
                 </div>
                 <div><label htmlFor="19:45" name="banquitotimeback">19:45</label>
                     <input type="checkbox" name="banquitoback" 
-                     checked={selectedRegreso === '19:45'}
+                     checked={selectedReturn === '19:45'}
                      className={styles.check_box_s}
                      onChange={() => handleRegresoChange('19:45')}
                      />
                 </div>
                 <div><label htmlFor="20:45" name="banquitotimeback">20:45</label>
                     <input type="checkbox" name="banquitoback" 
-                     checked={selectedRegreso === '20:45'}
+                     checked={selectedReturn === '20:45'}
                      className={styles.check_box_s}
                      onChange={() => handleRegresoChange('20:45')}
                      />

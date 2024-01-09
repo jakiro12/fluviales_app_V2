@@ -3,8 +3,11 @@ import styles from './styles.module.css';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { selectSpotTo } from '@/app/ContexDataApp/slice';
 export default function GardenShip(){
     //seria lo recomendable tener una img de fondo y cambiar su url con useState
+    const dispatch=useDispatch()
     const [imgRef,setImgRef]=useState(1)
     const router = useRouter()
     const setDestiny=()=>{
@@ -13,6 +16,7 @@ export default function GardenShip(){
     const setSpotToTravel =(e)=>{
         const value = Number(e.target.value);
         setImgRef(value);
+        dispatch(selectSpotTo(value))
     }
     return(
         <article className={styles.spots_box}>
