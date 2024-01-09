@@ -4,6 +4,7 @@ import styles from './styles.module.css';
 import { useState } from 'react';
 export default function TicketDay(){
     const currentBoatSelected=useSelector(state=> state.valores.boat_name)
+    const dayToTravel=useSelector(state=> state.valores.day_check)
     const [ticketsPerUser,setTicketsPerUser]=useState(1)
     const decreaseTickets = () => {
         if (ticketsPerUser > 1) {
@@ -38,7 +39,7 @@ export default function TicketDay(){
                     </div>
                     <div className={styles.port_info}>
                     <p>{currentBoatSelected}</p>
-                    <p>Valido:fecha</p>
+                    <p>Valido:{dayToTravel}</p>
                     </div>
                 </div>
                 <div className={styles.price_station}>

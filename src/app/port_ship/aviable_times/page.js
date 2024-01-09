@@ -2,27 +2,38 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import styles from './styles.module.css';
+import { useDispatch } from 'react-redux';
+import { selectDayTo } from '@/app/ContexDataApp/slice';
 export default function CheckHoursAndDays(){
     const router = useRouter()
+    const dispatch= useDispatch()
     const today= new Date()//trae el dia actual
     const [selectedDay, setSelectedDay] = useState('martes');
     const [selectDeparture, setSelectDeparture] = useState(null);
     const [selectedReturn, setSelectedReturn] = useState(null);
-    const formatDay= new Intl.DateTimeFormat("es-ar",{
-       weekday:'short'
-    })
+    const [selectedDayNumeric, setSelectedDayNumeric] = useState(null); // Variable para almacenar la fecha numérica
     const formatTimeNow=new Intl.DateTimeFormat("es-ar",{
         timeStyle:'short'
     })
-    const actualDay=formatDay.format(today)
     const timeTodayinHours=formatTimeNow.format(today)
     const daysOfWeek = ['lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado',];
     const actualDayIndex = today.getDay(); // 0 para el dia actual, 1, 2, etc para los dias restantes
   
     const handleDayChange = (e) => {
-        setSelectedDay(e.target.value);
-        setSelectDeparture(null);
-        setSelectedReturn(null);
+      const selectedDayName = e.target.value;
+      setSelectedDay(selectedDayName);
+  
+      // Obtener el índice del día seleccionado
+      const selectedDayIndex = daysOfWeek.indexOf(selectedDayName);
+  
+      // Calcular la fecha correspondiente al día seleccionado
+      const todayIndex = today.getDay();
+      const daysDifference = selectedDayIndex - todayIndex;
+      const selectedDate = new Date(today);
+      selectedDate.setDate(today.getDate() + daysDifference + 1);
+  
+      // Almacenar el valor numérico en otra variable
+      setSelectedDayNumeric(`${selectedDate.getDate()}/${selectedDate.getMonth() + 1}/${selectedDate.getFullYear()}`);
       };
     
       const handleIdaChange = (hora) => {
@@ -35,7 +46,16 @@ export default function CheckHoursAndDays(){
     
       
       const sendDataDay=()=>{
-        console.log(actualDay,selectDeparture,selectedReturn )
+        console.log(selectedDayNumeric)
+        const formatDateToday=new Intl.DateTimeFormat("es-ar",{
+          dateStyle:'short'
+      })
+      if(selectedDayNumeric === null){
+        const dateToday=formatDateToday.format(today)
+        dispatch(selectDayTo(dateToday))
+      }else{
+        dispatch(selectDayTo(selectedDayNumeric))
+      }
         router.push('/ticket')
       }
     return(
