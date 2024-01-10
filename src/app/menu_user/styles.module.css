@@ -50,22 +50,20 @@
   }
   
   .card::after {
-    position: relative;
+    position: absolute;
     content: attr(data-title);
     width: 90%;
     height: 30px;
-    bottom: 5%;
-    left: 5%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
   }
   
   .move_card {
     width: fit-content;
     height: fit-content;
     font-size: 65px;
-    
     font-weight: bold;
     color: #f7aa5f;
     border: none;

@@ -3,14 +3,14 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import styles from './styles.module.css';
 import { useDispatch } from 'react-redux';
-import { selectDayTo } from '@/app/ContexDataApp/slice';
+import { selectDayTo, selectHourTo } from '@/app/ContexDataApp/slice';
 export default function CheckHoursAndDays(){
     const router = useRouter()
     const dispatch= useDispatch()
     const today= new Date()//trae el dia actual
     const [selectedDay, setSelectedDay] = useState('martes');
     const [selectDeparture, setSelectDeparture] = useState(null);
-    const [selectedReturn, setSelectedReturn] = useState(null);
+    const [selectReturn, setSelectReturn] = useState(null);
     const [selectedDayNumeric, setSelectedDayNumeric] = useState(null); // Variable para almacenar la fecha numérica
     const formatTimeNow=new Intl.DateTimeFormat("es-ar",{
         timeStyle:'short'
@@ -39,12 +39,12 @@ export default function CheckHoursAndDays(){
       setSelectedDayNumeric(`${selectedDate.getDate()}/${selectedDate.getMonth() + 1}/${selectedDate.getFullYear()}`);
       };
     
-      const handleDepartureChange = (hora) => {
-        setSelectDeparture(hora);
+      const handleDepartureChange = (hour) => {
+        setSelectDeparture(hour);
       };
     
-      const handleReturnChange = (hora) => {
-        setSelectedReturn(hora);
+      const handleReturnChange = (hour) => {
+        setSelectReturn(hour);
       };
     
       
@@ -55,10 +55,14 @@ export default function CheckHoursAndDays(){
       if(selectedDayNumeric === null){
         const dateToday=formatDateToday.format(today)
         dispatch(selectDayTo(dateToday))
+        dispatch(selectHourTo(selectDeparture))
       }else{
         dispatch(selectDayTo(selectedDayNumeric))
+        dispatch(selectHourTo(selectDeparture))
       }
+      console.log(selectDeparture,selectReturn)
         router.push('/ticket')
+
       }
     
 
@@ -116,28 +120,28 @@ export default function CheckHoursAndDays(){
             <div className={styles.came_back}>Horarios de regreso
             <div><label htmlFor="17:45" name="banquitotimeback">17:45</label>
                     <input type="checkbox" name="banquitoback"
-                     checked={selectedReturn === '17:45'}
+                     checked={selectReturn === '17:45'}
                      className={styles.check_box_s}
                      onChange={() => handleReturnChange('17:45')}
                       />
                 </div>
                 <div><label htmlFor="18:45" name="banquitotimeback">18:45</label>
                     <input type="checkbox" name="banquitoback"
-                     checked={selectedReturn === '18:45'}
+                     checked={selectReturn === '18:45'}
                      className={styles.check_box_s}
                      onChange={() => handleReturnChange('18:45')}
                       />
                 </div>
                 <div><label htmlFor="19:45" name="banquitotimeback">19:45</label>
                     <input type="checkbox" name="banquitoback" 
-                     checked={selectedReturn === '19:45'}
+                     checked={selectReturn === '19:45'}
                      className={styles.check_box_s}
                      onChange={() => handleReturnChange('19:45')}
                      />
                 </div>
                 <div><label htmlFor="20:45" name="banquitotimeback">20:45</label>
                     <input type="checkbox" name="banquitoback" 
-                     checked={selectedReturn === '20:45'}
+                     checked={selectReturn === '20:45'}
                      className={styles.check_box_s}
                      onChange={() => handleReturnChange('20:45')}
                      />

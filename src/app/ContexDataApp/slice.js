@@ -6,6 +6,7 @@ export const Slice=createSlice({
         boat_name:'none',
         spot_name:'none',
         day_check:'none',
+        time_departure_check:'none'
     },
     reducers:{
         changeName:(state,action)=>{
@@ -19,8 +20,11 @@ export const Slice=createSlice({
         },
         selectDayTo:(state,action)=>{
             state.day_check=action.payload
+        },
+        selectHourTo:(state,action)=>{
+            state.time_departure_check=action.payload
         }
     }
 })
 
-export const {changeName,selectFloatTo,selectSpotTo,selectDayTo}=Slice.actions
+export const {changeName,selectFloatTo,selectSpotTo,selectDayTo,selectHourTo}=Slice.actions

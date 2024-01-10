@@ -5,6 +5,7 @@ import { useState } from 'react';
 export default function TicketDay(){
     const currentBoatSelected=useSelector(state=> state.valores.boat_name)
     const dayToTravel=useSelector(state=> state.valores.day_check)
+    const hourToTravel=useSelector(state=> state.valores.time_departure_check)
     const [ticketsPerUser,setTicketsPerUser]=useState(1)
     const decreaseTickets = () => {
         if (ticketsPerUser > 1) {
@@ -45,7 +46,7 @@ export default function TicketDay(){
                 <div className={styles.price_station}>
                     <div>
                         <p className={styles.open_time}>
-                           Su embarcacion zarpa a las: horas
+                           Su embarcacion zarpa a las: {hourToTravel}
                         </p>
                         <div className={styles.quantity_tickets}>
                            cantidad de tickets:
