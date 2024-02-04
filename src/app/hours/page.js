@@ -2,12 +2,21 @@
 import NavBarInfoHome from "../LayoutComponents/NavbarHome";
 import styles from './styles.module.css';
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
+
 export default function HoursOpen(){
     const router = useRouter()
     return(
         <article className={styles.hours_box}>
             <NavBarInfoHome/>
-            <main>foto</main>
+            <main>
+                <Image
+                src={'/times_travels.png'}
+                alt="Picture of the author"
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1000px) 50vw"
+                />
+            </main>
             <footer className={styles.days_open}>
             <h2>Horarios de la semana</h2>
                <div className={styles.hours_day}>

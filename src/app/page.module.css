@@ -4,6 +4,7 @@
   grid-template-rows: 10% 20% 70%;
   min-height: 100svh;
   overflow: hidden;
+  background-color: #edecec;
 }
 .login_form_box{
     height: 90%;

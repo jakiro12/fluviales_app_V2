@@ -3,10 +3,15 @@
     width: 100vw;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 10% 40% 50%;
+    grid-template-rows: 10% 50% 40%;
 }
 .hours_box li{
     list-style: none;
+}
+.hours_box > main{
+    width: 100%;
+    height: 100%;
+    position: relative;
 }
 .days_open{
     display: grid;

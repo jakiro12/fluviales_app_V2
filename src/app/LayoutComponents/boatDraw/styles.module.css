@@ -57,7 +57,7 @@
 .middle{
     width: 100px;
     height: 100px;
-   outline: 4px solid white;
+   outline: 4px solid #edecec;
     border-radius: 100% 100% 100% 0 ;
     background-color: red;
     transform: skew(-9deg, -9deg);
@@ -68,11 +68,8 @@
     height: 80px;
     background: #385BA0;
     transform: skew(-20deg);
-   outline: 5px solid white;
+   outline: 5px solid #edecec;
     border-radius: 100% 0 10px 0 ;
 }
             
 
-.animation-boat{
- 
-}

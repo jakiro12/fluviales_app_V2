@@ -16,7 +16,7 @@ export default function PromotedServices(){
                 Desde paseos en barcos pequeños para ver la vida silvestre y los paisajes naturales hasta excursiones en barcos más grandes con comodidades como comidas y bebidas, hay algo para todos los gustos.
                 </p>
                 <ul className={styles.option_boats}>
-                <li>Banquito San Andrés <a className={styles.info_boats} href="https://enapro.com.ar/#!/-informacion-ntf/" rel="noreferrer" target="_blank">(mas info)</a></li>
+                <li>Banquito San Andrés <a className={styles.info_boats} href="https://enapro.com.ar/#!/-informacion-ntf/https://enapro.com.ar/#!/-vuelven-los-cruces-desde-la-fluvial-al-banquito-san-andres/" rel="noreferrer" target="_blank">(mas info)</a></li>
                 <li>Tracker Garden I</li>
                 <li>Gomon Max II</li>
                 </ul>

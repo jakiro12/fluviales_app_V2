@@ -8,7 +8,7 @@ export default function AboutOurCompany(){
             <div className={styles.content_img}> <img className={styles.muestra}  alt='foto de la terminal fluvial'/>
            </div>
             <div className={styles.about_us}>
-                <h2>SOS Rio App Web</h2>
+                <h2>Fluviales del Parna</h2>
                 <p>La aplicacion web permite a los viajeros planificar,
                      reservar viajes y excursiones en bote desde el puerto de Rosario, Santa Fe. 
                      Con una interfaz intuitiva y fácil de usar, los usuarios pueden explorar distintas opciones

@@ -4,6 +4,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #edecec;
 }
 .ticket_cotainer{
     height: 90%;
