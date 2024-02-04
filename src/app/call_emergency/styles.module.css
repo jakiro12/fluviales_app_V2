@@ -30,13 +30,13 @@
     margin-left:10% ;
     width: 35px;
     height: 35px;
-    border: none;
     background-color: transparent;
-   /* background-image: url('../../svgLogos/copy-logo.svg');*/
     background-size: cover;
-    background-color: red;
-    position: relative;
-   
+    font-size: 33px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
 }
 
 .name_phone{
@@ -46,7 +46,14 @@
     
 }
 
-.number_link:link{
+.copy_number:link{
     text-decoration: none;
     color: white;
+}
+.info_number{
+    width: 75%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-inline: auto;
 }
