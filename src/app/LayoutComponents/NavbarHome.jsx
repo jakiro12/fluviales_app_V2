@@ -10,13 +10,13 @@ export default function NavBarInfoHome(){
                     <Link href='/'>Inicio</Link>
                 </li>
                 <li>
-                    <Link href='/hours'>Horarios</Link>
+                    <Link href='/info/hours'>Horarios</Link>
                 </li>
                 <li>
-                    <Link href='/services'>Servicios</Link> 
+                    <Link href='/info/services'>Servicios</Link> 
                 </li>
                 <li>
-                    <Link href='/about'>Informacion</Link>
+                    <Link href='/info/about'>Informacion</Link>
                 </li>
             </ul>
         </nav>

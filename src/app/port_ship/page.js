@@ -3,7 +3,7 @@ import styles from './styles.module.css';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectFloatTo } from '../ContexDataApp/slice';
+import { selectFloatTo } from '../contex/slice';
 
 export default function ChooseYourShip(){
     const router = useRouter()

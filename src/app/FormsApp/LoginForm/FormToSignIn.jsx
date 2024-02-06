@@ -43,7 +43,7 @@ export default function SignInFormTravel(){
                 >Ingresar</button>
             </form>
             <div className={styles.extra_options}>
-                 <button type="button" onClick={() => router.push('/create_user')}>Crear usuario</button>
+                 <button type="button" onClick={() => router.push('auth/create_user')}>Crear usuario</button>
                  <button>Recuperar contraseña</button>
             </div>
         </article>

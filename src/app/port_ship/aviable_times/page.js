@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import styles from './styles.module.css';
 import { useDispatch } from 'react-redux';
-import { selectDayTo, selectHourTo } from '@/app/ContexDataApp/slice';
+import { selectDayTo, selectHourTo } from '@/app/contex/slice';
 export default function CheckHoursAndDays(){
     const router = useRouter()
     const dispatch= useDispatch()

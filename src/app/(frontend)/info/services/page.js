@@ -1,5 +1,5 @@
 'use client'
-import NavBarInfoHome from '../LayoutComponents/NavbarHome'
+import NavBarInfoHome from '../../../LayoutComponents/NavbarHome'
 import styles from './styles.module.css'
 export default function PromotedServices(){
     return(

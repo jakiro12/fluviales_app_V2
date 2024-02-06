@@ -1,5 +1,5 @@
 'use client'
-import NavBarInfoHome from "../LayoutComponents/NavbarHome";
+import NavBarInfoHome from "../../../LayoutComponents/NavbarHome";
 import styles from './styles.module.css';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';

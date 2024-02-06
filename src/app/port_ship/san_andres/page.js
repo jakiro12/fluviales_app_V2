@@ -4,7 +4,7 @@ import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { selectSpotTo } from '@/app/ContexDataApp/slice';
+import { selectSpotTo } from '@/app/contex/slice';
 export default function GardenShip(){
     //seria lo recomendable tener una img de fondo y cambiar su url con useState
     const dispatch=useDispatch()

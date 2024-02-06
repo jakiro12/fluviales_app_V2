@@ -4,7 +4,7 @@ import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { selectSpotTo } from '@/app/ContexDataApp/slice';
+import { selectSpotTo } from '@/app/contex/slice';
 export default function GardenShip(){
     const [imgRef,setImgRef]=useState(1)
     const dispatch = useDispatch()
