@@ -1,6 +1,7 @@
 'use client'
 import { useState } from 'react';
 import styles from '../../../page.module.css';
+import ModalToShowMessage from './components/modal-alert';
 
 export default function CreateNewUser(){
     const[signUpDataForUser,setSignUpDataForUser]=useState({
@@ -11,12 +12,15 @@ export default function CreateNewUser(){
         user_mail:'',
         pp_user:'',
     })
+    const [created,setCreated]=useState(false)
+    const [msgContain , setMsgContain]=useState("usuario creado")
     const handleInputChange = (e) => {
         const { name, value } = e.target;
         setSignUpDataForUser({ ...signUpDataForUser, [name]: value });
       };
     const newUserDataToSend=(e)=>{
         e.preventDefault()
+        
         console.log(signUpDataForUser)
         setSignUpDataForUser({name_user_app:'',
         lastName_user_app:'',
@@ -24,10 +28,13 @@ export default function CreateNewUser(){
         number_phone:'',
         user_mail:'',
         pp_user:'',})
+        setCreated(true)
     }
     return(
         <article className={styles.content_form}>
-        <form className={styles.container} onSubmit={newUserDataToSend}>
+           { created === true ?
+                (  <ModalToShowMessage msg={msgContain} status={created}/>   ):
+                (<form className={styles.container} onSubmit={newUserDataToSend}>
             <div className={styles.input_content}>
                 <label htmlFor="" className={styles.name_alert}>Nombre</label>
             <input type="text" className={styles.personal_data}  
@@ -84,7 +91,9 @@ export default function CreateNewUser(){
                 
                 <button className={styles.send_data} type="submit">Registrarse</button>
             </div>
-        </form>
+        </form>)
+           } 
+        
         </article>
     )
 }
