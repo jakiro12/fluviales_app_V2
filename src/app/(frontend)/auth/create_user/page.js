@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import styles from '../../../page.module.css';
 import ModalToShowMessage from './components/modal-alert';
 import { supabase } from '@/app/utils/supabase';
-import { email_verification, phone_verfication, names_verification, adress_verification, password_verification } from './utilities/regex-createuser';
+import { email_verification, phone_verfication, names_verification, adress_verification, password_verification } from '../../utilities/regex-to-form.js';
 
 export default function CreateNewUser() {
     const [signUpDataForUser, setSignUpDataForUser] = useState({

@@ -7,6 +7,7 @@ export default function TicketDay(){
     const dayToTravel=useSelector(state=> state.valores.day_check)
     const hourToTravel=useSelector(state=> state.valores.time_departure_check)
     const [ticketsPerUser,setTicketsPerUser]=useState(1)
+    let currentMailUser=localStorage.getItem('current_email_user')
     const decreaseTickets = () => {
         if (ticketsPerUser > 1) {
           setTicketsPerUser(ticketsPerUser - 1);

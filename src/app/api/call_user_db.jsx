@@ -1,7 +1,6 @@
 import { supabase } from "@/app/utils/supabase";
 
 export const reqCurrentUser= async(user,pass)=>{
-   // console.log(param || 'parametro extra')
     const { data:register, error,status } = await supabase.from('UsersData')
     .select()
     .match({"emailUser":`${user}`,

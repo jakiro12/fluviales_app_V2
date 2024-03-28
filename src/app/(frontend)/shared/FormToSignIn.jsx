@@ -3,6 +3,7 @@ import { useState } from "react";
 import styles from '../../page.module.css';
 import { useRouter } from 'next/navigation';
 import { reqCurrentUser } from "@/app/api/call_user_db";
+import { email_verification,password_verification } from "../utilities/regex-to-form";
 export default function SignInFormTravel(){
    
     const router = useRouter()
@@ -18,16 +19,21 @@ export default function SignInFormTravel(){
     const checkValuesUser=async(e)=>{
         e.preventDefault()   
         setIsLoading(true)
-        const response = await reqCurrentUser(signinUserParams["nameUser"],signinUserParams["passUser"])
-       // console.log(response.user_req)
-        if(response.status_req === 200 && response.user_req.length !== 0 ){
-            setIsLoading(false)
-            router.push('/menu_user')
+        if(email_verification.test(signinUserParams.nameUser) && password_verification.test(signinUserParams.passUser)){
+            const response = await reqCurrentUser(signinUserParams["nameUser"],signinUserParams["passUser"])
+            if(response.status_req === 200 && response.user_req.length !== 0 ){
+                setIsLoading(false)
+                localStorage.setItem('current_email_user',response.user_req[0].emailUser)
+                router.push('/menu_user')
+            }else{
+                console.log('no se encuentra')
+                setIsLoading(false)
+            }
+            if(response.error_message) console.log(response.error_message.message)
         }else{
-            console.log('no se encuentra')
-            setIsLoading(false)
+            alert('Ingrese datos validos por favor')
         }
-        if(response.error_message) console.log(response.error_message.message)
+        
 
     }
     return(
@@ -68,7 +74,9 @@ export default function SignInFormTravel(){
                 </div>
             </article>
         ) : (
-            <div>cargando</div>
+            <div className={styles.spinner_container}>
+                <span class={styles.loader}></span>
+            </div>
         )}
     </>
     )
