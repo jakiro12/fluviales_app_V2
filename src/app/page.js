@@ -1,5 +1,5 @@
 import styles from './page.module.css'
-import SignInFormTravel from './FormsApp/LoginForm/FormToSignIn'
+import SignInFormTravel from './(frontend)/shared/FormToSignIn'
 import NavBarInfoHome from './LayoutComponents/NavbarHome'
 import BoatDraw from './LayoutComponents/boatDraw/boatAnimate'
 
