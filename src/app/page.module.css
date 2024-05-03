@@ -262,7 +262,7 @@
   width: fit-content;
   padding: 5px 10px;
   border-radius: 5px;
-  font-weight: 600;
+  font-weight: 400;
   border: none;
   cursor: pointer;
   font-size: 18px;
@@ -270,10 +270,21 @@
 }
 .boat_start{
   display:  flex;
-  justify-content: center;
+  justify-content: space-around;
   height: 40%;
   margin: auto;
   width: 76%;
+}
+.redirect_to_sign_in{
+  height: 100%;
+  width: fit-content;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: 400;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  background: linear-gradient(180deg,#0855A0,#0854a0a7);
 }
 
 /* Login form Styles  */

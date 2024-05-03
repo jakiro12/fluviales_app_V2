@@ -14,9 +14,10 @@ export default function ModalToShowMessage({msg,status}){
     return(
         <div className={styles.display_modal} >
             <div className={styles.logo_alert} style={{backgroundColor: msg === 'creado' ? '#28ff02' : '#e91414'}}>
+            {msg === 'creado' ? <span>&#10004;</span>  : <span>X</span>}
             </div>
             <p className={styles.body_information_modal}>
-                usuario {msg} , agregar descripcion dle error
+                {msg === 'creado' ? 'Usuario Creado exitosamente' : 'Ocurrio un error verifique bien los camposa llenar'}
             </p>
             <button onClick={()=>refreshWebPath()} className={styles.btn_to_close_it} style={{backgroundColor: msg === 'creado' ? '#28ff02' : '#e91414'}}>
                 Cerrar

@@ -15,21 +15,23 @@
     height: 40px;
     border-radius: 50%;
     margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 22px;
 }
 .body_information_modal{
     width: 90%;
     height: 80%;
-    outline: 1px solid black;
     margin: auto;
+    text-align: center;
 }
 .btn_to_close_it{
     width: fit-content;
     height: fit-content;
     margin: auto;
     padding:3px 5px ;
-    border: none;
     font-size: 20px;
-    border-radius: 10px;
-    color: white;
     cursor: pointer;
 }

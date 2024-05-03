@@ -32,6 +32,7 @@ export default function SignInFormTravel(){
             if(response.error_message) console.log(response.error_message.message)
         }else{
             alert('Ingrese datos validos por favor')
+            setIsLoading(false)
         }
         
 
@@ -75,7 +76,7 @@ export default function SignInFormTravel(){
             </article>
         ) : (
             <div className={styles.spinner_container}>
-                <span class={styles.loader}></span>
+                <span className={styles.loader}></span>
             </div>
         )}
     </>

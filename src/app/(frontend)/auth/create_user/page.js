@@ -4,8 +4,10 @@ import styles from '../../../page.module.css';
 import ModalToShowMessage from './components/modal-alert';
 import { supabase } from '@/app/utils/supabase';
 import { email_verification, phone_verfication, names_verification, adress_verification, password_verification } from '../../utilities/regex-to-form.js';
-
+import { useRouter } from 'next/navigation'
+ 
 export default function CreateNewUser() {
+    const router = useRouter()
     const [signUpDataForUser, setSignUpDataForUser] = useState({
         name_user_app: '',
         lastName_user_app: '',
@@ -144,6 +146,7 @@ export default function CreateNewUser() {
                     </div>
                     <div className={styles.boat_start}>
                         <button className={styles.send_data} type="submit">Registrarse</button>
+                        <button className={styles.redirect_to_sign_in} onClick={() => router.push('/')}>Ingresar con usuario</button>
                     </div>
                 </form>
             )}
