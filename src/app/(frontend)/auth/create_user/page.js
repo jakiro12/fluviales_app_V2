@@ -44,7 +44,6 @@ export default function CreateNewUser() {
 
     const newUserDataToSend = async(e) => {
         e.preventDefault();
-
         if (Object.values(signUpDataForUser).includes('')) return console.log('Debes completar todos los campos');
         if(names_verification.test(signUpDataForUser.name_user_app) === false){
             return console.log('Dato invalido')
@@ -61,20 +60,24 @@ export default function CreateNewUser() {
         if(email_verification.test(signUpDataForUser.user_mail) === false){
             return console.log('Dato invalido')
         }
-       
-        const { error } = await supabase
-        .from('UsersData')
-        .insert({ nameUser:`${signUpDataForUser["name_user_app"]}`
-        ,lastNameUser:`${signUpDataForUser["lastName_user_app"]}`
-        ,emailUser:`${signUpDataForUser["user_mail"]}`
-        ,userPass:`${signUpDataForUser["pp_user"]}`
-        ,adressUser:`${signUpDataForUser["user_adress"]}`
-        ,phoneUser:`${signUpDataForUser["number_phone"]}`
-     })
-        if(error){
-            console.log(error)
-            setMsgContain(error.message)
-            setAction(true)
+        let checkIfMailExist=currentUsers.filter(e=> e["emailUser"] === signUpDataForUser["user_mail"] )
+        if(checkIfMailExist.length === 0){
+            const { error } = await supabase
+            .from('UsersData')
+            .insert({ nameUser:`${signUpDataForUser["name_user_app"]}`
+            ,lastNameUser:`${signUpDataForUser["lastName_user_app"]}`
+            ,emailUser:`${signUpDataForUser["user_mail"]}`
+            ,userPass:`${signUpDataForUser["pp_user"]}`
+            ,adressUser:`${signUpDataForUser["user_adress"]}`
+            ,phoneUser:`${signUpDataForUser["number_phone"]}`
+         })
+            if(error){
+                console.log(error)
+                setMsgContain(error.message)
+                setAction(true)
+            }
+        }else{
+            setMsgContain("El correo ya se encuentra utilizado por otro usuario")
         }
         setAction(true);
     };
